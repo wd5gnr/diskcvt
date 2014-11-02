@@ -10,9 +10,17 @@
     gcc -o diskcvt diskcvt.c
 
  Typical usage:
-   diskcvt input.dsk output.cpm
+   diskcvt --tocpm input.dsk output.cpm
    cpmls -l -f briel119 output.cpm 
    cpmcp -f briel119 output.cpm 0:somefile.txt somefile.txt
 
+options are:
+	 --tocpm (DSK to CPM format)
+	 --fromcpm (CPM to 119 track DSK)
+	 --fromcpm77 (CPM to 77 track DSK)
+
  You do need to add a diskdefs to /etc/cpmtools/diskdefs 
  (see included file)
+
+Note: the --fromcpm options are not well tested and may not correctly
+set up the system track, so please backup disk images accordingly!!!
